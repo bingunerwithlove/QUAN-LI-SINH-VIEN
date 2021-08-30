@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学生管理サイト</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <!-- JQuery UI -->
+  <link rel="stylesheet" href="css/jquery-ui.min.css" />
+
+  <!-- Animate -->
+  <!-- <link rel="stylesheet" href="css/animate.css"> -->
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="css/modal.css" />
+
+  <link rel="stylesheet" href="css/style4.css" />
+
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+  
+
+<!-- Page Content Holder -->
+    <div id="content">
+      <div class="container">
+        <div class="card text-center">
+          <!-- Header -->
+          <div class="card-header myCardHeader">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="text-left text-primary font-weight-bold">
+                  リスト
+                </h3>
+              </div>
+              <div class="col-md-6 text-right">
+                <button class="btn btn-primary" id="btnThem" data-toggle="modal" data-target="#myModal">
+                  追加
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="名前" id="searchName" />
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-bordered table-hover myTable">
+              <thead class="text-primary">
+                <tr>
+                  <th class="nowrap">
+                    <span class="mr-1">ID番号</span>
+                    <i class="fa fa-arrow-up" id="SapXepTang"></i>
+                    <i class="fa fa-arrow-down" id="SapXepGiam"></i>
+                  </th>
+                  <th>名前</th>
+                  <th>メール</th>
+                  <th>電話番号</th>
+                  <th>数学</th>
+                  <th>物理学</th>
+                  <th>化学</th>
+
+                  <th><em class="fa fa-cog"></em></th>
+                </tr>
+              </thead>
+              <tbody id="tableDanhSach">
+                
+              </tbody>
+            </table>
+          </div>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="head-form mb-0">
+          <h2 id="header-title">フォーム</h2>
+        </header>
+
+        <!-- Modal Header -->
+        <!-- 	<div class="modal-header">
+					<h4 class="modal-title" id="modal-title">Modal Heading</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div> -->
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input type="msnv" name="id" id="id" class="form-control input-sm" placeholder="ID番号" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-address-book"></i></span>
+                </div>
+                <input type="name" name="name" id="name" class="form-control input-sm" placeholder="名前" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="メール" />
+              </div>
+
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="phone" name="phone" id="phone" class="form-control input-sm" placeholder="電話番号" />
+              </div>
+
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="idCard" name="idCard" id="idCard" class="form-control input-sm" placeholder="銀行ID" />
+              </div>
+
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="text" name="math" id="math" class="form-control input-sm" placeholder="数学の点数" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="text" name="physics" id="physics" class="form-control input-sm" placeholder="化学の点数" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="text" name="chemistry" id="chemistry" class="form-control input-sm"
+                  placeholder="化学の点数" />
+              </div>
+            </div>
+            <button type="reset" class="d-none" id="btnReset">リセット</button>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer" id="modal-footer">
+          <button id="btnAdd" type="button" class="btn btn-success" onclick="addStudent()">
+            学生追加
+          </button>
+          <button id="btnUpdate" type="button" class="btn btn-success" onclick="updateStudent()">
+            修正
+          </button>
+          <button id="btnClose" type="button" class="btn btn-danger" data-dismiss="modal">
+            閉じる
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap -->
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <!-- Date Picker -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/datepicker.js"></script>
+
+ 
+  <script src="js/sweetalert.min.js"></script>
+
+  <!-- My Javascript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script src="./models/student.js"></script>
+  <script src="js/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebarCollapse").on("click", function () {
+        $("#sidebar").toggleClass("active");
+      });
+    });
+  </script>
+</body>
+
+</html>
